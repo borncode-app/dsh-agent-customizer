@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Agent customization",
+    "description": "Adds an Agent customization page to Settings. Pick an agent, write the Instructions it must read before it starts work, and choose the model every freshly created agent starts on."
+  }
+}

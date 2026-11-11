@@ -1,0 +1,12 @@
+# Inserts the agent-customizer Host row. It keeps the per-agent instructions the
+# user writes in Settings → Agent customization in the package's state.json and
+# contributes them to that agent's own system prompt, and it exposes the
+# deployment default model to the same page.
+- insert:
+    - id: agent-customizer
+      name: '@local/dsh-agent-customizer'
+      config:
+        # Path the Web GUI reads and writes the customizations at.
+        endpoint: /plugins/agent-customizer
+        # Largest instruction text accepted, in characters.
+        maxLength: 20000

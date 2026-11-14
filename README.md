@@ -1,3 +1,25 @@
+> **This repository has moved into one monorepo.**
+>
+> The BornCode plugins — agent customization, desktop control, auto-continue,
+> auto-shutdown, browser use, session instructions, session sync, and the side
+> chat — now live in
+> **[`borncode-app/dsh-borncode`](https://github.com/borncode-app/dsh-borncode)**,
+> one repository with one Plugins entry.
+>
+> | this repo | new home |
+> |---|---|
+> | `dsh-agent-customizer` | `packages/dsh-agent-customizer` |
+> | `dsh-agent-desktop` | `packages/dsh-agent-desktop` |
+> | `dsh-auto-continue` | `packages/dsh-auto-continue` |
+> | `dsh-auto-shutdown` | `packages/dsh-auto-shutdown` |
+> | `dsh-browser-use` | `packages/dsh-browser-use` |
+> | `dsh-session-instructions` | `packages/dsh-session-instructions` |
+> | `dsh-session-sync` | `packages/dsh-session-sync` |
+> | `dsh-side-chat` | `packages/dsh-side-chat` |
+>
+> The code and its history are unchanged; only the repository is shared. Install
+> `dsh-borncode` instead of the individual bundles. This repository stays open
+> so the old links keep working.
 <div align="center">
   <img src="icon.svg" alt="" width="72" height="72">
   <h1>dsh-agent-customizer</h1>
@@ -23,11 +45,11 @@ Nothing is baked into the bundle. The instructions live in `state.json` next to 
 
 ## Features
 
-- **Per-agent instructions** — one editor per agent in *Settings → Agent customization*; each agent only sees its own block.
-- **Deployment default model** — read and written from the same page, so the fallback model is not a YAML hunt.
-- **Survives upgrades** — text is persisted in the plugin's `state.json`, not in the profile's patch file.
-- **Bounded input** — `maxLength` rejects runaway pastes before they reach a system prompt.
-- **Localized UI** — English, Thai, and Chinese strings shipped in `locale/`.
+- **Per-agent instructions** â€” one editor per agent in *Settings â†’ Agent customization*; each agent only sees its own block.
+- **Deployment default model** â€” read and written from the same page, so the fallback model is not a YAML hunt.
+- **Survives upgrades** â€” text is persisted in the plugin's `state.json`, not in the profile's patch file.
+- **Bounded input** â€” `maxLength` rejects runaway pastes before they reach a system prompt.
+- **Localized UI** â€” English, Thai, and Chinese strings shipped in `locale/`.
 - No network calls, no credentials, no background timers.
 
 ## Requirements
@@ -35,7 +57,7 @@ Nothing is baked into the bundle. The instructions live in `state.json` next to 
 | | |
 |---|---|
 | DeepSeek Harness | 0.2.x (Web GUI) |
-| Runtime | Node 24, supplied by the Harness runtime — nothing to install |
+| Runtime | Node 24, supplied by the Harness runtime â€” nothing to install |
 | Platform | Windows, macOS, Linux |
 
 ## Install
@@ -77,7 +99,7 @@ Example override:
 
 1. The host row registers a small HTTP endpoint on the Web GUI origin and loads `state.json`.
 2. The client half (`client.js`) renders the editor for the current agent and PUTs the text back.
-3. On every turn, the host row contributes the stored text to that agent's system prompt — and nothing else.
+3. On every turn, the host row contributes the stored text to that agent's system prompt â€” and nothing else.
 
 ## Files
 
@@ -90,16 +112,16 @@ Example override:
 | `icon.svg` | plugin icon |
 | `test/` | the checks used while building it |
 
-## ภาษาไทย
+## à¸ à¸²à¸©à¸²à¹„à¸—à¸¢
 
-Plugin นี้ทำให้คุณปรับ **"ตัวตน" ของ agent แต่ละตัว** ได้จากหน้า Settings → Agent customization โดยตรง:
+Plugin à¸™à¸µà¹‰à¸—à¸³à¹ƒà¸«à¹‰à¸„à¸¸à¸“à¸›à¸£à¸±à¸š **"à¸•à¸±à¸§à¸•à¸™" à¸‚à¸­à¸‡ agent à¹à¸•à¹ˆà¸¥à¸°à¸•à¸±à¸§** à¹„à¸”à¹‰à¸ˆà¸²à¸à¸«à¸™à¹‰à¸² Settings â†’ Agent customization à¹‚à¸”à¸¢à¸•à¸£à¸‡:
 
-- **Instructions** ของแต่ละ agent — ข้อความที่คุณเขียนจะถูกส่งเข้า system prompt ของ agent ตัวนั้นเท่านั้น
-- **โมเดลเริ่มต้นของ deployment** — ตั้ง/แก้ได้จากหน้าเดียวกัน ไม่ต้องไปแก้ YAML
-- ข้อความถูกเก็บใน `state.json` ของ plugin ไม่ใช่ใน patch ของโปรไฟล์ → อัปเกรด DSH หรือ `git pull` แล้วข้อความไม่หาย
+- **Instructions** à¸‚à¸­à¸‡à¹à¸•à¹ˆà¸¥à¸° agent â€” à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸—à¸µà¹ˆà¸„à¸¸à¸“à¹€à¸‚à¸µà¸¢à¸™à¸ˆà¸°à¸–à¸¹à¸à¸ªà¹ˆà¸‡à¹€à¸‚à¹‰à¸² system prompt à¸‚à¸­à¸‡ agent à¸•à¸±à¸§à¸™à¸±à¹‰à¸™à¹€à¸—à¹ˆà¸²à¸™à¸±à¹‰à¸™
+- **à¹‚à¸¡à¹€à¸”à¸¥à¹€à¸£à¸´à¹ˆà¸¡à¸•à¹‰à¸™à¸‚à¸­à¸‡ deployment** â€” à¸•à¸±à¹‰à¸‡/à¹à¸à¹‰à¹„à¸”à¹‰à¸ˆà¸²à¸à¸«à¸™à¹‰à¸²à¹€à¸”à¸µà¸¢à¸§à¸à¸±à¸™ à¹„à¸¡à¹ˆà¸•à¹‰à¸­à¸‡à¹„à¸›à¹à¸à¹‰ YAML
+- à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¸–à¸¹à¸à¹€à¸à¹‡à¸šà¹ƒà¸™ `state.json` à¸‚à¸­à¸‡ plugin à¹„à¸¡à¹ˆà¹ƒà¸Šà¹ˆà¹ƒà¸™ patch à¸‚à¸­à¸‡à¹‚à¸›à¸£à¹„à¸Ÿà¸¥à¹Œ â†’ à¸­à¸±à¸›à¹€à¸à¸£à¸” DSH à¸«à¸£à¸·à¸­ `git pull` à¹à¸¥à¹‰à¸§à¸‚à¹‰à¸­à¸„à¸§à¸²à¸¡à¹„à¸¡à¹ˆà¸«à¸²à¸¢
 
-ติดตั้ง: `git clone` แล้วสั่ง `plugin_manager install_bundle target=<path>` ใน DSH รีสตาร์ทหนึ่งครั้ง
+à¸•à¸´à¸”à¸•à¸±à¹‰à¸‡: `git clone` à¹à¸¥à¹‰à¸§à¸ªà¸±à¹ˆà¸‡ `plugin_manager install_bundle target=<path>` à¹ƒà¸™ DSH à¸£à¸µà¸ªà¸•à¸²à¸£à¹Œà¸—à¸«à¸™à¸¶à¹ˆà¸‡à¸„à¸£à¸±à¹‰à¸‡
 
 ## License
 
-[MIT](LICENSE) © 2026 BornCode
+[MIT](LICENSE) Â© 2026 BornCode
